@@ -33,6 +33,17 @@ const GetUser = async(req,res) => {
     })
 }
 
+const GetAllUser = async(req,res) => {
+    await User.findAll()
+    .then(data => {
+        res.send({
+            "data": data
+        })
+    }).catch (e => {
+        console.log("error");
+    })
+}
+
 const UpdateUser = async (req,res) => {
     await User.update({firstName: req.body.firstName,lastName: req.body.lastName},{
         where: {
@@ -68,6 +79,7 @@ const DeleteUser = async (req,res) =>  {
 module.exports = {
     CreateUser,
     GetUser,
+    GetAllUser,
     UpdateUser,
     DeleteUser
 }

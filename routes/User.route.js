@@ -4,8 +4,9 @@ const UserService = require("../controller/user.controller");
 
 router.post("/create",UserService.CreateUser);
 router.post("/get",UserService.GetUser);
-router.post("/update",UserService.UpdateUser)
-router.delete("/delete",UserService.DeleteUser)
+router.post("/update",UserService.UpdateUser);
+router.delete("/delete",UserService.DeleteUser);
+router.get("/getAll", UserService.GetAllUser);
 
 
 module.exports = router;
